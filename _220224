@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+int A[7];
+int T:
+int main(){
+  scanf("%d", T);
+  for(int i =1 ; i<T; i++){ //테스트 케이스 동안
+    int n;
+    scanf("%d", &n); //n 은 일수 
+    int c;
+    int date[7] = {0};
+    for(int j=0; j<7; j++){ // day 초기화
+      scanf("%d", &A[j]);
+    }
+    
+    
+    for(int j=0; j<7; j++){
+      int k;
+      c=0;
+      if(A[j] ==1){
+        k = j;// A[j] 가 1인 인덱스를 k에 저장
+        while( c < n){
+          if( A[k] ==1 ) c++;
+          date[j]++;
+          k++;
+          if( k == 7 ) k = 0;
+        }
+      }
+    }
+    int min = n*7;
+    for(int j=0; j<7; j++){
+      if(date[j] != 0 && date[j] < min) min = date[j];
+    }
+    
+    printf("#%d %d\n", i, min);
+  }
+  return 0;
+
+}
