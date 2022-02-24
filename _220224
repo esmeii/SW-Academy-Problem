@@ -4,7 +4,7 @@ int A[7];
 int T:
 int main(){
   scanf("%d", T);
-  for(int i =1 ; i<T; i++){ //테스트 케이스 동안
+  for(int i =1 ; i<=T; i++){ //테스트 케이스 동안
     int n;
     scanf("%d", &n); //n 은 일수 
     int c;
